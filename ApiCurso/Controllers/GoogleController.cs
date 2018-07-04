@@ -21,6 +21,7 @@ namespace ApiCurso.Controllers
             client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
             var data =  await client.GetStringAsync("https://api.github.com/orgs/dotnet/repos");
+            client?.Dispose();
             return Ok(data);
         }
     }
