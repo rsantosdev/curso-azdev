@@ -9,7 +9,8 @@ namespace ApiCurso.Controllers
         [HttpGet("")]
         public IActionResult GetMachineName()
         {
-            return Ok(new { nome = Environment.MachineName, data = DateTime.UtcNow });
+            var envValue = Environment.GetEnvironmentVariable("TIPO_BANCO");
+            return Ok(new { nome = Environment.MachineName, data = DateTime.UtcNow, banco = envValue });
         }
     }
 }
