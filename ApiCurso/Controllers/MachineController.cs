@@ -9,7 +9,7 @@ namespace ApiCurso.Controllers
         [HttpGet("")]
         public IActionResult GetMachineName()
         {
-            return Ok(new { name = Environment.MachineName });
+            return Ok(new { nome = Environment.MachineName, data = DateTime.UtcNow });
         }
     }
 }
